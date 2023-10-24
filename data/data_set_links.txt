@@ -1,0 +1,10 @@
+Sign language Mnist dataset : https://www.kaggle.com/datasets/datamunge/sign-language-mnist
+
+Sign language recognition dataset :
+https://paperswithcode.com/task/sign-language-recognition/latest#datasets
+
+Dataset page link : 
+https://paperswithcode.com/dataset/snips
+
+S/A Dataset:
+https://www.kaggle.com/datasets/sidharkal/sports-image-classification?resource=download

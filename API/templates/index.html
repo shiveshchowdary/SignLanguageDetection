@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport"
+              content="width=device-width,
+                       initial-scale=1" />
+     
+        <!-- Bootstrap CSS -->
+        <link href=
+    "https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+              rel="stylesheet"
+              integrity=
+    "sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+              crossorigin="anonymous"/>
+        <title>NLP project</title>
+    </head>
+
+    <body>
+        <h1>text to sign languge</h1>
+    </body>
+
+    <form class="form-inline" action="/" method="POST">
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Message</label>
+            <input class="form-control" id="exampleFormControlTextarea1" rows="2" name="files"></textarea>
+          </div>
+        <button type="submit" class="btn btn-primary mb-2">Send</button>
+    </form>
+
+    {% if Ret %}
+    <video width="320" height="240" controls>
+        <source src="{{ url_for('static', filename='ChToSign.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    {% endif %}
+
+    {% if show %}
+    <form class="form-inline" action="/capture_start/" method="POST">
+        <button type="submit" class="btn btn-primary mb-2" >Start</button>
+    </form>
+    {% endif %}
+
+    {% if strt %}
+    <form class="form-inline" action="{{ url_for('capture') }}" method="POST">
+        <div class="col-lg-8  offset-lg-2">
+            <h3 class="mt-5">Capturing Signs</h3>
+            <img src="{{ url_for('video_feed')}}" width="40%">
+        </div>
+        <!-- <button type="submit" class="btn btn-primary mb-2" >capture</button> -->
+    </form>
+    {% endif %}
+
+    {% if cap %}
+    <form class="form-inline" action="/capture_end/" method="POST">
+        <button type="submit" class="btn btn-primary mb-2" >Stop</button>
+    </form>
+    {% endif %}
+    
+    <p>{{dataToRender}}</p>
+
+</html>
